@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
+# 投影
+
 # 读取图片并将像素转换为黑白
 image = plt.imread("D:/AAAAAAAAAAAAAAAAAAAA/github/chrome_plugin_run_localProgram/chrome/src/test/resources/test.bmp")
 # bw_image = np.mean(image, axis=2)  # 转为灰度图像
