@@ -16,12 +16,29 @@ for i in range(height):
             a2[i][j][k] = v
             print(a2[i][j][k])
 
-
-
-
 # 读
 xzImg = mpimg.imread('D:/AAAAAAAAAAAAAAAAAAAA/github/chrome_plugin_run_localProgram/chrome/src/test/resources/person.jpg')
 xzHeight, xzWidth, _a = xzImg.shape
+original_image = numpy.empty([xzHeight, xzWidth, _a],  dtype="uint8")
+for y in range(xzHeight):
+    for x in range(xzWidth):
+        # 获取当前像素的颜色值
+        pixel_color = xzImg[y, x]
+
+        # 在这里可以对每个像素进行处理，例如修改颜色值
+
+        # 示例：反转像素的颜色
+        new_pixel_color = 1 - pixel_color
+
+        # 更新原始图片的像素值
+        original_image[y, x] = pixel_color
+
+# 保存新图片
+plt.imsave('D:/AAAAAAAAAAAAAAAAAAAA/github/chrome_plugin_run_localProgram/chrome/src/test/resources/bak.person.jpg', original_image)
+plt.axis("off")
+plt.show()
+
+
 print("width:", xzWidth)
 print("height:", xzHeight)
 print("_a:", _a)
